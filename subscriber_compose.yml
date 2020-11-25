@@ -1,8 +1,7 @@
 version: '3'
 services:
-#docker run -it -p 31883:1883 -p 39001:9001 -v /home/aitest/service/mosquitto/config/:/mosquitto/config -v /home/aitest/service/mosquitto/data/:/mosquitto/data -v /home/aitest/service/mosquitto/log:/mosquitto/log eclipse-mosquitto
   subscribe-xxx:
-    image: 'eclipse-mosquitto'
+    image: ipc-subscriber
     restart: 'always'
     environment:
     - TZ=Asia/Taipei
