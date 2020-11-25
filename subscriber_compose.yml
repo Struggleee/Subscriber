@@ -5,14 +5,14 @@ services:
     restart: 'always'
     environment:
     - TZ=Asia/Taipei
-    - MQTT_SERVER="10.1.64.30"
+    - MQTT_SERVER=10.1.64.30
     - MQTT_PORT=31883
     - MQTT_ALIVE=60
-    - MQTT_TOPIC="/L1_PD1"
-    - NFS_SERVER="10.1.64.30"
+    - MQTT_TOPIC=/L1_PD1
+    - NFS_SERVER=10.1.64.30
     - NFS_PORT=32222
-    # - USER="models"
-    # - PASSWD="liteonmodels"
+    # - USER=models
+    # - PASSWD=liteonmodels
     - LOCAL_PATH=/model
     volumes:
     - /home/aitest/model:/model
