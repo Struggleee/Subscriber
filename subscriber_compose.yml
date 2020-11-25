@@ -1,0 +1,19 @@
+version: '3'
+services:
+#docker run -it -p 31883:1883 -p 39001:9001 -v /home/aitest/service/mosquitto/config/:/mosquitto/config -v /home/aitest/service/mosquitto/data/:/mosquitto/data -v /home/aitest/service/mosquitto/log:/mosquitto/log eclipse-mosquitto
+  subscribe-xxx:
+    image: 'eclipse-mosquitto'
+    restart: 'always'
+    environment:
+    - TZ=Asia/Taipei
+    - MQTT_SERVER="10.1.64.30"
+    - MQTT_PORT="33306"
+    - MQTT_ALIVE=60
+    - MQTT_TOPIC="/L1_PD1"
+    - NFS_SERVER="10.1.64.30"
+    - NFS_PORT=32222
+    # - USER="models"
+    # - PASSWD="liteonmodels"
+    - LOCAL_PATH=/model
+    volumes:
+    - /home/aitest/model:/model
